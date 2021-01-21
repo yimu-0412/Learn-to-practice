@@ -1,0 +1,46 @@
+要求：判断1000年2000年之间的闰年及个数
+
+代码1
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int year = 0;
+	int count = 0;
+	for (year = 1000;year <= 2000;year++)
+	{
+		if ((year % 4 == 0) && (year % 100 != 0))// 被4整除但是不能被100整除
+		{
+			printf("%d ", year);
+			count++;
+	    }
+		else if (year % 400 == 0) // 被400整除
+		{
+			printf("%d ", year);
+			count++;
+		}
+	}
+	printf("\ncount=%d", count);
+	return 0;
+}
+
+
+代码2
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int year = 0;
+	int count = 0;
+	for (year = 1000;year <= 2000;year++)
+	{
+		
+		if( ((year % 4 == 0) && (year % 100 != 0))||(year % 400 == 0))
+		{
+			printf("%d ", year);
+			count++; 
+		}
+	}
+	printf("\ncount=%d", count);
+	return 0;
+}
