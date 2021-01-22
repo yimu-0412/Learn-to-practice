@@ -1,0 +1,19 @@
+//交换两个数的值
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+void swap(int *px, int *py)
+{
+	int temp= 0;
+	temp = *px;
+	*px = *py;
+	*py = temp;
+}
+int main()
+{
+	int a = 10; 
+	int b = 20;
+	printf("交换前 a=%d b=%d\n", a, b);
+	swap(&a, &b);
+    printf("交换后 a=%d b=%d\n", a, b);
+	return 0;
+}
