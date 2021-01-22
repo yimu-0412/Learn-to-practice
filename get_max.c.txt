@@ -1,0 +1,17 @@
+//要求：利用自定义函数找出两个数中的最大值
+
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int get_max(int x, int y)
+{       
+        int z = (x > y) ? (x) : (y);
+        return z;
+}
+int main()
+{
+	int a = 10;
+	int b = 20;
+	int max = get_max(a, b);//找出两个数的最大值
+	printf("max=%d\n", max);
+	return 0;
+}
