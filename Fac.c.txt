@@ -1,0 +1,44 @@
+要求：求n的阶乘
+代码1:利用for循环语句
+
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+Facl(int n)
+{	int i = 0;
+	int ret = 1;
+	for (i = 1;i <= n;i++)
+	{
+		ret *= i;
+	}
+	return ret;
+}
+int main()  
+{
+	int n = 0;
+	int ret = 0;
+	scanf("%d", &n);
+	ret = Fac1(n);
+	printf("%d", ret);
+	return 0;
+}
+
+代码1:利用函数递归
+
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+Fac2(int n)
+{
+	if (n <= 1)
+		return 1;
+	else
+		return n * Fac2(n - 1);
+}
+int main()  
+{
+	int n = 0;
+	int ret = 0;
+	scanf("%d", &n);
+	ret = Fac2(n);
+	printf("%d", ret);
+	return 0;
+}
