@@ -1,0 +1,19 @@
+要求：判断三个成绩中的最高分
+
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+
+    int sc1 = 0;
+    int sc2 = 0;
+    int sc3 = 0;
+    char ch = 0;
+    while (~scanf("%d %d %d",&sc1,&sc2,&sc3))
+    {
+        int max = sc1 > sc2 ? sc1 : sc2;
+        max = max > sc3 ? max : sc3;
+        printf("%d", max);
+    }
+    return 0;
+}
