@@ -1,0 +1,44 @@
+要求：计算字符串的长度
+
+代码1（计数器法）
+
+#define  _CRT_SECURE_NO_WARNINGS 
+#include<stdio.h>
+int my_strlen(char* str)
+{
+	int count = 0;
+	while (*str != '\0')
+	{
+		count++;
+		str++;
+	}
+	return count;
+}
+int main()
+{
+	char arr[] = "abcdef";
+	int len = my_strlen(arr);	
+	printf("%d", len);
+	return 0;
+}
+
+代码2（指针减指针）
+
+#define  _CRT_SECURE_NO_WARNINGS 
+#include<stdio.h>
+int my_strlen(char* str)
+{
+	char* start = str;
+	while (*str != '\0')
+	{
+		str++;
+	}
+	return str-start;
+}
+int main()
+{
+	char arr[] = "abcdef";
+	int len = my_strlen(arr);
+	printf("%d", len);
+	return 0;
+}
