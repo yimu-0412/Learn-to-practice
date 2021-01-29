@@ -1,0 +1,46 @@
+题目：字符串逆序（不使用库函数）
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<assert.h>
+size_t my_strlen(const char* str)
+{
+     assert(str!=NULL);
+	 int count=0;
+	 while(*str != '\0')
+	 {
+	   count ++;
+	   str ++;
+	 }
+     return count;
+}
+void reverse_string(const char* str)
+{
+   int len=my_strlen(str);
+   char* left=str;
+   char* right=str+len-1;
+   while(left < right)
+   {
+      char tmp=*left;
+	       *left = *right;
+		   *right=tmp;
+		   left ++;
+		   right --; 
+   }
+}
+int main()
+{
+   char arr[]="abcdefgh";
+   printf("%s\n",arr);
+   reverse_string(arr);
+   printf("%s\n",arr);
+   return 0;
+}
+
+
+
+
+
+
+
+
+
