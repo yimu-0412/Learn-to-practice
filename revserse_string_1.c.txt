@@ -13,7 +13,7 @@ size_t my_strlen(const char* str)
 	 }
      return count;
 }
-void reverse_string(const char* str)
+void reverse_string(char* str)
 {
    int len=my_strlen(str);
    char* left=str;
