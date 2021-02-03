@@ -1,0 +1,66 @@
+要求：用代码实现strcpy库函数功能
+
+代码1：
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<assert.h>
+char* my_strcpy(char* dest,char* str)
+{
+   assert(*str !=NULL);
+   while(*str != '\0')
+   {
+      *dest = *str;
+	  dest ++;
+	  str ++;
+   }
+      *dest = *str;
+	  return dest;
+}
+int main()
+{
+  char arr1[20]={};
+  char arr2[]="abcdefg";
+  char *p=arr2;
+  my_strcpy(arr1,p);
+  printf("arr1=%s\n",p);
+  return 0;
+}
+
+优化代码2
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<assert.h>
+char* my_strcpy(char* dest,char* str)
+{
+   char* ret = dest;
+   assert(dest !=NULL);
+   assert(str !=NULL);
+   while(*dest ++ = *str ++)
+   {
+     ;
+   }
+	  return ret;
+}
+int main()
+{
+  char arr1[20]={};
+  char arr2[]="abcdefg";
+  char *p=arr2;
+  my_strcpy(arr1,p);
+  printf("arr1=%s\n",p);
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
