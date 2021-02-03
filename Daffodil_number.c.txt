@@ -1,0 +1,33 @@
+要求：打印10000以内的自幂数（水仙花数）
+
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int i=0;
+    for(i=1;i<=10000;i++)
+    {
+       //确定i的位数
+	   int tmp=i;
+	   int n = 1;
+	   int sum = 0;
+	   while(tmp/10)
+	   {
+	    n++;
+		tmp /= 10;
+	   }
+	   //确定i每一位的数值，并求其N次方之和
+       tmp=i;
+	   while(tmp)
+	   {
+	   sum += (int)pow(tmp%10,n);//pow库函数为double类型
+	   tmp /1= 10;
+	   }
+	   if(sum==i)
+	   {
+	   printf("%d ";i); 
+	   }
+   }
+   return 0;
+}

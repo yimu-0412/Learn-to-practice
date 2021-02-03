@@ -22,7 +22,7 @@ int main()
 	return 0;
 }
 
-代码1:利用函数递归
+代码2:利用函数递归
 
 #define  _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>

@@ -1,0 +1,25 @@
+要求：判断当前机器的字节序
+
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+check_sys()
+{
+	int a = 1;
+	char* p = &a;
+	if (*p == 1)
+		return 1;//小端
+	else
+		return 0;//大端
+}
+int main() 
+{
+	if (check_sys()==1)
+	{
+		printf("小端\n");
+	}
+	else
+	{
+		printf("大端\n");
+	}
+	return 0;
+}
