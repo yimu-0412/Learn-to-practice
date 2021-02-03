@@ -1,6 +1,6 @@
-è¦æ±‚ï¼šç”¨ä»£ç å®ç°strcpyåº“å‡½æ•°åŠŸèƒ½
+ÒªÇó£ºÓÃ´úÂëÊµÏÖstrcpy¿âº¯Êı¹¦ÄÜ
 
-ä»£ç 1ï¼š
+´úÂë1£º
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<assert.h>
@@ -26,7 +26,7 @@ int main()
   return 0;
 }
 
-ä¼˜åŒ–ä»£ç 2
+ÓÅ»¯´úÂë2
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<assert.h>
@@ -50,17 +50,3 @@ int main()
   printf("arr1=%s\n",p);
   return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
