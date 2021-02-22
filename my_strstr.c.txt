@@ -1,0 +1,42 @@
+//strstr模拟实现
+
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+char* my_strstr(const char* dest, const char* src)
+{
+	assert(dest && src);
+	const char* cp = dest;
+	while (*cp)
+	{
+		const char* p1 = cp;
+		const char* p2 = src;
+		while ((*p1) && (*p2) && (*p1 == *p2))
+		{
+			p1++;
+			p2++;
+		}
+		if (*p2 == '\0')
+		{
+			return (char*)cp;
+		}
+		cp++;
+	}
+	return NULL;
+}
+int main()
+{
+	const char arr1[] = "abcdefg";
+	const char arr2[] = "bcd";
+	char* ret = my_strstr(arr1, arr2);
+	if (ret != NULL)
+	{
+		printf("%s\n", ret);
+	}
+	else
+	{
+		printf("找不到字符串\n");
+	}
+	return 0;
+}
