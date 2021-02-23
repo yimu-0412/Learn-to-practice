@@ -1,6 +1,6 @@
-ÒªÇó£ºÓÃ´úÂëÊµÏÖstrcpy¿âº¯Êı¹¦ÄÜ
+è¦æ±‚ï¼šç”¨ä»£ç å®ç°strcpyåº“å‡½æ•°åŠŸèƒ½
 
-´úÂë1£º
+ä»£ç 1ï¼š
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<assert.h>
@@ -22,11 +22,11 @@ int main()
   char arr2[]="abcdefg";
   char *p=arr2;
   my_strcpy(arr1,p);
-  printf("arr1=%s\n",p);
+  printf("arr1=%s\n",arr1);
   return 0;
 }
 
-ÓÅ»¯´úÂë2
+ä¼˜åŒ–ä»£ç 2
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<assert.h>
@@ -47,6 +47,6 @@ int main()
   char arr2[]="abcdefg";
   char *p=arr2;
   my_strcpy(arr1,p);
-  printf("arr1=%s\n",p);
+  printf("arr1=%s\n",arr1);
   return 0;
 }
