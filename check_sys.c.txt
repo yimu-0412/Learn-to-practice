@@ -1,5 +1,6 @@
 要求：判断当前机器的字节序
 
+//代码1
 #define  _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 check_sys()
@@ -14,6 +15,56 @@ check_sys()
 int main() 
 {
 	if (check_sys()==1)
+	{
+		printf("小端\n");
+	}
+	else
+	{
+		printf("大端\n");
+	}
+	return 0;
+}
+
+//代码2
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int check_sys()
+{
+	int i = 1;
+	return (*(char*)&i);
+}
+
+
+//代码3
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int ret = check_sys();
+	if (ret == 1)
+	{
+		printf("小端\n");
+	}
+	else
+	{
+		printf("大端\n");
+	}
+	return 0;
+}int check_sys()
+{
+	union Un
+	{
+		char c;
+		int i;
+	}u;
+	u.i = 1;
+
+	return u.c;
+}
+int main()
+{
+	int ret = check_sys();
+	if (ret == 1)
 	{
 		printf("小端\n");
 	}
