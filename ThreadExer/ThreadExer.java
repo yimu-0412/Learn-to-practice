@@ -1,0 +1,49 @@
+
+/*
+    创建两 个分线程 ，让其中 一 个线程输出 1 100 之间的偶数，另 一个线程输出 1 100 之间的奇数。
+ */
+public class ThreadExer{
+    public static void main(String[] args) {
+        Mythread1 m1 = new Mythread1();
+        Mythread2 m2 = new Mythread2();
+
+        m1.setName("线程一");
+        m1.start();
+   
+        m2.setName("线程二");
+            m2.start();
+
+    }
+
+}
+class Mythread1 extends Thread{
+    @Override
+    public void run() {
+        for(int i = 0;i < 100;i ++){
+            if(i % 2 == 0 ){
+                try {
+                    Mythread1.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(Thread.currentThread().getName() + ":" + i);
+            }
+        }
+    }
+}
+
+class Mythread2 extends Thread{
+    @Override
+    public void run() {
+        for(int i = 0;i < 100;i ++){
+            if(i % 2 != 0 ){
+                try {
+                    Mythread1.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(Thread.currentThread().getName() + ":" + i);
+            }
+        }
+    }
+}
