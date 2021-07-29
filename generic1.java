@@ -31,7 +31,6 @@ class Algorithm1{
 		return max;
 	}
 }
-
 public class Test{
 	public static void main(String[] args) {
 		// 泛型类测试
@@ -39,11 +38,9 @@ public class Test{
 		Integer integer = {1,2.3,57,9,0};
 		Integer max1 = algorithm.findMax(integer);
 		System.out.printf(max1);
-
 		// 泛型方法测试:会根据 形参的类型 推导出 整个泛型的类型参数
 		Integer max2 = Algorithm1.<Integer>findMax(integer);
 		System.out.printf(max2);
-
 		Integer max3 = Algorithm1.findMax(integer);
 		// 一般这里就省略了
 		System.out.printf(max2);
