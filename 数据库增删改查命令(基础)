@@ -1,0 +1,160 @@
+select name from student;
+
+select sn from student;
+
+select sn + 10 , name from student;
+
+create table test(
+id int,
+name varchar(20),
+chinese decimal(3,1),
+math decimal(3,1),
+english decimal(3,1)
+);
+
+
+insert into test values
+(1,'唐三藏',67,98,56),
+(2,'孙悟空',87.5,78,77),
+(3,'猪悟能',88,98.5,90),
+(4,'曹操',82,84,67),
+(5,'刘备',55.5,85,45),
+(6,'孙权',70,73,78.5),
+(7,'宋江',75,65,30);
+
+select * from test;
+
+select name, math from test;
+
+select name, english from test;
+
+select id, name, chinese from test;
+
+select id, name, math ,chinese from test;
+
+select name , 78 from test;
+
+SELECT id, name, 10 FROM test;
+
+select name , chinese + 10, math + 20 , english + 89 from test;
+
+select name , chinese + math + english from test;
+
+select name , chinese + math + english as total from test;
+
+select name , chinese + math + english 总分 from test;
+
+insert into test values
+(8,'唐子怡',67,98,56),
+(9,'孙二娘',87.5,78,77);
+
+select distinct name ,math from test;
+
+insert into test values
+(10,'唐子怡',67,98,56),
+(11,'孙二娘',87.5,78,77);
+
+
+select * from test order by math;
+
+select name , english from test order by english;
+
+select * from test order  by math desc;
+
+select id , name , math + chinese + english total from test order by total ;
+
+select * from test order by math desc,english,chinese desc;
+
+select name ,english from test where english < 60;
+
+select name ,english ,chinese from test where chinese > english;
+
+select name ,chinese + math + english from test where chinese + math +english < 200;
+
+select * from test where chinese > 80 and english > 80;
+
+select name , chinese , english from test where chinese > 80 or english > 80;
+
+select * from test where chinese > 80 or math > 70 and english > 70;
+
+select * from test where (chinese > 80 or math > 70) and english > 70; 
+
+select name , chinese from test where chinese between 80 and 90;
+select name , chinese from test where chinese >= 80 and chinese <= 90;
+
+
+select name , math from test where math in (58,59,98,99);
+select name , math from test where math = 58 or math = 59 or math = 98 or math = 99;
+
+select name from test where name like '孙%';
+select name from test where name like '孙_';
+select name from test where name like '孙__';
+
+insert into test (id,name) values(12,'武松');
+
+select * from test where math is not null;
+select * from test where math is null;
+
+select * from test order by english limit 3;
+select * from test order by english desc limit 3;
+
+select name,english from test where english > 60 limit 3;
+select name,math from test where math > 60 limit 4;
+
+-- 从 s 开始，筛选 n 条结果
+SELECT ... FROM table_name [WHERE ...] [ORDER BY ...] LIMIT s, n;
+select name,math from test order by math desc limit 3 , 4;
+
+-- 从 s 开始，筛选 n 条结果，比第二种用法更明确，建议使用
+SELECT ... FROM table_name [WHERE ...] [ORDER BY ...] LIMIT n OFFSET s;
+select name,math from test order by math limit 3 offset 6;
+
+select * from test order by id limit 3 offset 6;
+
+
+案例：按 id 进行分页，每页 3 条记录，分别显示 第 1、2、3、4页
+select * from test order by id limit 3;
+
+select * from test order by id limit 3 offset 3;
+
+select * from test order by id limit 3 offset 6;
+
+select * from test order by id limit 3 offset 9;
+
+
+update test set math = 10 ,chinese = 78 , english = 67 where name = '武松';
+update test set math = 10 ,chinese = 65 , english = 34 where name = '唐子怡';
+
+
+select * from test order by chinese + math + english limit 3;
+update test set math = math + 30 order by chinese + math + english limit 3;
+
+update test set chinese = chinese * 2 ;
+
+delete from test where name = "唐子怡";
+
+delete from test  where id = 11;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
