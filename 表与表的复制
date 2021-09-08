@@ -1,0 +1,32 @@
+-- 创建一张用户表，设计有name姓名、email邮箱、sex性别、mobile手机号字段。需要把已有的
+学生数据复制进来，可以复制的字段为name、qq_mail
+
+create database exer0908;
+use exer0908;
+
+create table test_user(
+	id int primary key auto_increment,
+	name varchar(20) comment '姓名',
+	age int comment '年龄',
+	email varchar(20) comment '邮箱',
+	sex varchar(1) comment '性别',
+	mobile varchar(20) comment '手机号'
+);
+
+create table student(
+	id int primary key auto_increment,
+	name varchar(20) comment '姓名',
+	age int comment '年龄',
+	email varchar(20) comment '邮箱',
+	sex varchar(1) comment '性别',
+	mobile varchar(20) comment '手机号'
+);
+
+insert into student (name,email) values 
+('Jack','743597'),
+('Tom','0948690');
+
+
+insert into test_user (name,email) select name,email from student;
+
+select * from test_user;
