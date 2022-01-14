@@ -1,47 +1,56 @@
 package map;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author wangyimu
- * @create 2021-07-31-18:47
+ * @Program 2022
+ * @create 2022-01-14-19:10
  */
 public class MapTest {
     public static void main(String[] args) {
-        Map<String, String> map = new HashMap<>();
-        // 设置 key 对应的 value
-        map.put("及时雨", "宋江");
-        map.put("国民女神", "高圆圆");
-        map.put("阿强", "王宝强");
-        map.put(null,null);// map的k和v值都可为空
+        HashMap map = new HashMap();
+        map.put(1,"曹操");
+        map.put(2,"孙悟空");
+        map.put(3,"猪八戒");
 
-        // 返回 key 对应的 value
-        String val = map.get("国民女神"); // 高圆圆
-        System.out.println(val);
+        map.put(4,"曹操");
 
-        // 返回 key 对应的 value，key 不存在，返回默认值
-        val = map.getOrDefault("沉鱼","西施");
-        System.out.println(val);
+        // System.out.println(map.remove(1));
 
-        map.put("及时雨","宋公明");
-        // key 值一定是唯一的，如果key值一样，那么val会更新
-        val = map.get("及时雨"); // 及时雨
-        System.out.println(val);
+        System.out.println(map.get(2));
 
-        // 返回所有 key 的不重复集合
-        Set<String> stringSet = map.keySet();
-        System.out.println(stringSet); // [国民女神, 阿强, 及时雨]
+        System.out.println(map.containsKey(1));
 
-        // 返回所有的 key-value 映射关系  map不能使用迭代器打印
-        Set<Map.Entry<String,String>> entrySet = map.entrySet();
-        for(Map.Entry<String,String> entry  : entrySet){
-            System.out.println("key:" + entry.getKey() + " \tval:" + entry.getValue());
+        System.out.println(map.containsValue("曹操"));
+
+        System.out.println(map.size());
+
+        // 遍历所有的key-value:方式二
+        Set keySet = map.keySet();
+        Iterator iterator = keySet.iterator();
+        while(iterator.hasNext()){
+            Object key = iterator.next();
+            Object value = map.get(key);
+            System.out.println(key +"--->" + value);
         }
-        System.out.println();
-        // 打印顺序，不一定是put的顺序
-        System.out.println(map); // {国民女神=高圆圆, 阿强=王宝强, 及时雨=宋公明}
+
+        Collection colls = map.values();
+        for(Object obj : colls){
+            System.out.println(obj);
+        }
+
+        // 遍历所有的key-value:方式一
+        Set entrySet = map.entrySet();
+        Iterator iterator1 = entrySet.iterator();
+        while(iterator1.hasNext()){
+            Object o = iterator1.next();
+            // entrySet集合中的元素都是entry
+            Map.Entry entry = (Map.Entry)o;
+            System.out.println(entry.getKey()+"--->" + entry.getValue());
+        }
+
+
 
     }
 }
